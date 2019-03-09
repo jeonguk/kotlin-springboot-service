@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: kotlin-springboot-service
+
+
+
+#######################
+# Debugging ( logger level)
+#######################
+
+logging:
+  level:
+    com.jeonguk.web: INFO
+    org.springframework: INFO
