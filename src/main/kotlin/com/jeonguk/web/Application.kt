@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Bean
 import java.util.concurrent.ConcurrentHashMap
 
 @SpringBootApplication
-class KotlinSpringbootServiceApplication {
+class Application {
 
 	companion object {
 		val initialUsers = arrayOf(
-				User(1, "11111"),
+				User(1, "jeonguk"),
 				User(2, "222222"),
 				User(3, "3333333")
 		)
@@ -22,5 +22,5 @@ class KotlinSpringbootServiceApplication {
 }
 
 fun main(args: Array<String>) {
-	runApplication<KotlinSpringbootServiceApplication>(*args)
+	runApplication<Application>(*args)
 }
