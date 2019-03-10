@@ -6,14 +6,22 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.converter.HttpMessageConverter
 import org.springframework.http.converter.json.GsonHttpMessageConverter
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport
 
 @Configuration
 class WebConfig : WebMvcConfigurationSupport() {
 
+    val RESOURCE_LOCATIONS = arrayOf("classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/")
+
     override fun configureMessageConverters(converters: MutableList<HttpMessageConverter<*>>) {
         converters.add(gsonHttpMessageConverter())
         super.configureMessageConverters(converters)
+    }
+
+    override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations(*RESOURCE_LOCATIONS)
     }
 
     @Bean

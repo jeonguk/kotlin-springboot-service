@@ -1,6 +1,5 @@
 package com.jeonguk.web
 
-import com.jeonguk.web.config.WebConfig
 import com.jeonguk.web.model.User
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
@@ -9,19 +8,20 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
-import org.springframework.test.context.ContextConfiguration
+import org.springframework.restdocs.RestDocumentationExtension
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 
-@ExtendWith(SpringExtension::class)
+
+@SpringBootTest
 @AutoConfigureMockMvc
-@ContextConfiguration(classes = [WebConfig::class])
-@SpringBootTest(classes = [Application::class])
+@ExtendWith(RestDocumentationExtension::class, SpringExtension::class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class HttpApiTests(@Autowired var mockMvc: MockMvc) {
+
 
     @Test
     fun `List users`() {

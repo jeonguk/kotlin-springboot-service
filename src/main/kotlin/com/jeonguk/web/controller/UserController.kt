@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.concurrent.ConcurrentHashMap
 import javax.validation.Valid
+import org.springframework.web.bind.annotation.RequestMapping
+
+
 
 @RestController
 @RequestMapping("/api")
@@ -15,6 +18,11 @@ class UserController {
 
     @Autowired
     lateinit var users: ConcurrentHashMap<Int, User>
+
+    @RequestMapping
+    fun index(): String {
+        return "Hello, World"
+    }
 
     @GetMapping("/user/{userId}")
     fun getUser(@PathVariable userId: Int) = users[userId]

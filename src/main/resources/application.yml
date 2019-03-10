@@ -13,5 +13,6 @@ spring:
 
 logging:
   level:
-    com.jeonguk.web: INFO
-    org.springframework: INFO
+    root: INFO
+    com.jeonguk.web: DEBUG
+    org.springframework.web: DEBUG
