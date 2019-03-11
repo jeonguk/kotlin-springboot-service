@@ -1,6 +1,7 @@
 package com.jeonguk.web.config
 
 import com.google.gson.FieldNamingPolicy
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -12,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 @Configuration
 class WebConfig : WebMvcConfigurationSupport() {
 
-    val RESOURCE_LOCATIONS = arrayOf("classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/")
+    val resourceLocation = arrayOf("classpath:/META-INF/resources/", "classpath:/resources/", "classpath:/static/", "classpath:/public/")
 
     override fun configureMessageConverters(converters: MutableList<HttpMessageConverter<*>>) {
         converters.add(gsonHttpMessageConverter())
@@ -21,7 +22,7 @@ class WebConfig : WebMvcConfigurationSupport() {
 
     override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
         registry.addResourceHandler("/**")
-                .addResourceLocations(*RESOURCE_LOCATIONS)
+                .addResourceLocations(*resourceLocation)
     }
 
     @Bean
@@ -34,14 +35,12 @@ class WebConfig : WebMvcConfigurationSupport() {
         return converter
     }
 
-}
+    @Bean
+    fun gson(): Gson {
+        val gsonBuilder = GsonBuilder()
+        gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+        gsonBuilder.setPrettyPrinting()
+        return  gsonBuilder.create()
+    }
 
-//class CustomGsonHttpMessageConverter : GsonHttpMessageConverter() {
-//    init {
-//        super.setGson(GsonBuilder()
-//                //.serializeNulls()
-//                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-//                .setPrettyPrinting()
-//                .create())
-//    }
-//}
+}
