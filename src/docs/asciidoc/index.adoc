@@ -1,4 +1,4 @@
-= Rest Docs Sample API Document
+= Rest Docs API Document
 xxx.com
 :doctype: book
 :icons: font
@@ -54,29 +54,85 @@ API에 관계없이 아래 사항을 지켜주셔야 합니다.
 | 실제 반환될 데이터
 |===
 
-[[hello]]
-== Hello World API
+&#160;
 
-=== Request
+== REFERENCE DOCUMENTS
+
+[[get-users]]
+=== 조회 리스트
+
+==== Request
 
 CURL:
 
-include::{snippets}/user/curl-request.adoc[]
-
-Request Parameters:
-
-include::{snippets}/user/request-parameters.adoc[]
+include::{snippets}/sample-getusers/curl-request.adoc[]
 
 Request HTTP Example:
 
-include::{snippets}/user/http-request.adoc[]
+include::{snippets}/sample-getusers/http-request.adoc[]
 
-=== Response
-
-Response Fields:
-
-include::{snippets}/user/response-fields.adoc[]
+==== Response
 
 Response HTTP Example:
 
-include::{snippets}/user/http-response.adoc[]
+include::{snippets}/sample-getusers/http-response.adoc[]
+
+
+Response BODY:
+
+include::{snippets}/sample-getusers/response-body.adoc[]
+
+&#160;
+
+[[post-user]]
+=== 등록 API
+
+==== Request
+CURL:
+
+include::{snippets}/sample-postuser/curl-request.adoc[]
+
+Request HTTP Example:
+
+include::{snippets}/sample-postuser/http-request.adoc[]
+
+Request BODY Example:
+
+include::{snippets}/sample-postuser/request-body.adoc[]
+
+==== Response
+
+Response HTTP Example:
+
+include::{snippets}/sample-postuser/http-response.adoc[]
+
+
+Response BODY:
+
+include::{snippets}/sample-postuser/response-body.adoc[]
+
+
+&#160;
+
+[[put-user]]
+=== 수정
+
+==== Request
+
+include::{snippets}/sample-putuser/path-parameters.adoc[]
+
+include::{snippets}/sample-putuser/request-fields.adoc[]
+
+include::{snippets}/sample-putuser/request-body.adoc[]
+
+===== Request HTTP Example
+
+include::{snippets}/sample-putuser/http-request.adoc[]
+
+==== Response
+
+include::{snippets}/sample-putuser/response-fields.adoc[]
+
+===== Response HTTP Example:
+
+include::{snippets}/sample-putuser/http-response.adoc[]
