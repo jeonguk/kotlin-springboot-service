@@ -6,15 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import java.util.concurrent.ConcurrentHashMap
 import javax.validation.Valid
-import org.springframework.web.bind.annotation.RequestMapping
-
-
 
 @RestController
 @RequestMapping("/api")
-class UserController {
+class SampleController {
 
-    private val logger = LoggerFactory.getLogger(UserController::class.java)
+    private val logger = LoggerFactory.getLogger(SampleController::class.java)
 
     @Autowired
     lateinit var users: ConcurrentHashMap<Int, User>
@@ -40,9 +37,10 @@ class UserController {
     fun deleteUser(@PathVariable userId: Int) = users.remove(userId)
 
     @PutMapping("/user/{userId}")
-    fun putUser(@PathVariable userId: Int, @Valid @RequestBody user: User) {
+    fun putUser(@PathVariable userId: Int, @Valid @RequestBody user: User): User {
         users.remove(userId)
         users[user.userId] = user
+        return user
     }
 
 }
