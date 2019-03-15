@@ -24,7 +24,7 @@ class H2DbConfig {
     fun dataSource(): DataSource {
         val dataSource = DriverManagerDataSource()
         dataSource.setDriverClassName("org.h2.Driver")
-        dataSource.url = "jdbc:h2:mem:mojo-app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
+        dataSource.url = "jdbc:h2:mem:spring-app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"
         dataSource.username = "sa"
         dataSource.password = ""
         return dataSource
@@ -34,7 +34,7 @@ class H2DbConfig {
     fun entityManager(): LocalContainerEntityManagerFactoryBean {
         val em = LocalContainerEntityManagerFactoryBean()
         em.dataSource = dataSource()
-        em.setPackagesToScan("com.kakaobank.mojo.entity.shard")
+        em.setPackagesToScan("com.jeonguk.web.entity")
         em.jpaVendorAdapter = HibernateJpaVendorAdapter()
         em.setJpaPropertyMap(ImmutableMap.of(
                 "hibernate.hbm2ddl.auto", "create-drop",

@@ -3,6 +3,9 @@ package com.jeonguk.web.config
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.jeonguk.web.config.adapter.LocalDateTimeTypeAdapter
+import com.jeonguk.web.config.adapter.LocalDateTypeAdapter
+import com.jeonguk.web.config.adapter.LocalTimeAdapter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.converter.FormHttpMessageConverter
@@ -12,6 +15,9 @@ import org.springframework.http.converter.json.GsonHttpMessageConverter
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport
 import java.nio.charset.StandardCharsets
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
 
 @Configuration
 class WebConfig : WebMvcConfigurationSupport() {
@@ -33,6 +39,9 @@ class WebConfig : WebMvcConfigurationSupport() {
     @Bean
     fun gsonHttpMessageConverter(): GsonHttpMessageConverter {
         val gsonBuilder = GsonBuilder()
+                .registerTypeAdapter(LocalDateTime::class.java, localDateTimeTypeAdapter())
+                .registerTypeAdapter(LocalDate::class.java, localDateTypeAdapter())
+                .registerTypeAdapter(LocalTime::class.java, localTimeAdapter())
                 .setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .setPrettyPrinting()
@@ -44,11 +53,28 @@ class WebConfig : WebMvcConfigurationSupport() {
     @Bean
     fun gson(): Gson {
         return GsonBuilder()
+                .registerTypeAdapter(LocalDateTime::class.java, localDateTimeTypeAdapter())
+                .registerTypeAdapter(LocalDate::class.java, localDateTypeAdapter())
+                .registerTypeAdapter(LocalTime::class.java, localTimeAdapter())
                 .setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'")
                 .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .setPrettyPrinting()
                 .create()
     }
 
+    @Bean
+    fun localDateTimeTypeAdapter(): LocalDateTimeTypeAdapter {
+        return LocalDateTimeTypeAdapter()
+    }
+
+    @Bean
+    fun localDateTypeAdapter(): LocalDateTypeAdapter {
+        return LocalDateTypeAdapter()
+    }
+
+    @Bean
+    fun localTimeAdapter(): LocalTimeAdapter {
+        return LocalTimeAdapter()
+    }
 
 }
