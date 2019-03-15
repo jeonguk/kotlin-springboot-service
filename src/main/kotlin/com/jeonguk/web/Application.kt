@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
-import org.springframework.transaction.annotation.EnableTransactionManagement
 import java.math.BigDecimal
 import java.time.LocalDateTime
 import java.util.*
@@ -25,7 +24,6 @@ import java.util.concurrent.ConcurrentHashMap
 			DataSourceTransactionManagerAutoConfiguration::class],
 		scanBasePackages = ["com.jeonguk.web"]
 )
-@EnableTransactionManagement
 class Application {
 
 	companion object {
