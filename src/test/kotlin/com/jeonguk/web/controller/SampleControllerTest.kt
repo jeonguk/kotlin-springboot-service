@@ -37,8 +37,9 @@ import org.springframework.web.context.WebApplicationContext
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class SampleControllerTest(
         @Autowired var context: WebApplicationContext,
-        @Autowired var mockMvc: MockMvc,
         @Autowired var gson: Gson) {
+
+    lateinit var mockMvc: MockMvc
 
     @BeforeEach
     fun setUp(restDocumentation: RestDocumentationContextProvider) {

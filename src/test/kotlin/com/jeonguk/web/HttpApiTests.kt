@@ -34,5 +34,4 @@ class HttpApiTests(@Autowired var mockMvc: MockMvc) {
                 .andDo(MockMvcResultHandlers.print())
     }
 
-
 }
