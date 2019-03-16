@@ -34,10 +34,16 @@ class JsonTest {
             "\"age\":32," +
             "\"grid\":[" +
                     "{" +
-                        "\"street_address\":\"21 2nd Street\"," +
-                        "\"city\":\"New York\"," +
-                        "\"state\":\"NY\"," +
-                        "\"postal_code\":\"10021\""+
+                        "\"street_address\":\"21 2nd Street 1\"," +
+                        "\"city\":\"New York 1\"," +
+                        "\"state\":\"NY 1\"," +
+                        "\"postal_code\":\"10021 1\""+
+                    "}," +
+                    "{" +
+                        "\"street_address\":\"21 2nd Street 2\"," +
+                        "\"city\":\"New York 2\"," +
+                        "\"state\":\"NY 2\"," +
+                        "\"postal_code\":\"10021 2\""+
                     "}" +
                 "]" +
             "}"
