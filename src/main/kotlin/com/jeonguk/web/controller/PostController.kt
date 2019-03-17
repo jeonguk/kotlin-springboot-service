@@ -1,5 +1,6 @@
 package com.jeonguk.web.controller
 
+import com.jeonguk.web.entity.Post
 import com.jeonguk.web.model.PostDto
 import com.jeonguk.web.service.PostService
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,4 +20,6 @@ class PostController {
     @GetMapping("/post/{postId}")
     fun getPost(@PathVariable("postId") postId: Long): ResponseEntity<PostDto> = postService.getPost(postId)
 
+    @GetMapping("/posts")
+    fun getPosts(): ResponseEntity<MutableList<Post>> = postService.getPosts()
 }

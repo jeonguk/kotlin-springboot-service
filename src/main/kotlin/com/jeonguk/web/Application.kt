@@ -14,7 +14,6 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import java.math.BigDecimal
 import java.time.LocalDateTime
-import java.util.*
 import java.util.concurrent.ConcurrentHashMap
 
 @SpringBootApplication(
@@ -46,16 +45,18 @@ class Application {
 
 			@Throws(Exception::class)
 			override fun run(args: ApplicationArguments) {
-				val findPost: Optional<Post> = postRepository.findById(1L)
-				if (!findPost.isPresent) {
+				postRepository.deleteAll()
+
+				for (i in 1..10) {
 					val post = Post(0,
-							postTitle = "post title",
-							postContent = "post content",
-							amount = BigDecimal("1234567890"),
+							postTitle = "post title $i",
+							postContent = "post content $i",
+							amount = BigDecimal("1234567800"),
 							createdAt = LocalDateTime.now()
 					)
 					postRepository.save(post)
 				}
+
 			}
 		}
 	}

@@ -6,7 +6,7 @@ import com.google.gson.stream.JsonWriter
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
-class LocalTimeAdapter: TypeAdapter<LocalTime>() {
+class LocalTimeTypeAdapter: TypeAdapter<LocalTime>() {
 
     override fun write(out: JsonWriter, value: LocalTime?) {
         if (value != null)

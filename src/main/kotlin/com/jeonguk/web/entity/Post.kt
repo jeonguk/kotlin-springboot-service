@@ -12,7 +12,7 @@ import javax.persistence.Id
 data class Post(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val postId: Long,
+        val id: Long,
         val postTitle: String,
         val postContent: String,
         val amount: BigDecimal,
