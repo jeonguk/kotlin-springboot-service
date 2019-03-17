@@ -35,5 +35,8 @@ spring:
 logging:
   level:
     root: INFO
-    com.jeonguk.web: DEBUG
-    org.springframework.web: DEBUG
+    com.jeonguk.web: INFO
+    org.springframework.web: INFO
+    org.hibernate:
+      SQL: DEBUG
+      type.descriptor.sql: TRACE

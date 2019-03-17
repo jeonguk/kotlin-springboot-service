@@ -39,7 +39,9 @@ class H2DbConfig {
         em.setJpaPropertyMap(ImmutableMap.of(
                 "hibernate.hbm2ddl.auto", "create-drop",
                 "hibernate.dialect", "org.hibernate.dialect.H2Dialect",
-                "hibernate.ejb.entitymanager_factory_name", "entityManager"
+                "hibernate.ejb.entitymanager_factory_name", "entityManager",
+                "hibernate.show_sql", "true",
+                "hibernate.format_sql", "true"
         ))
         return em
     }

@@ -1,6 +1,5 @@
 package com.jeonguk.web.entity
 
-import org.hibernate.annotations.CreationTimestamp
 import java.math.BigDecimal
 import java.time.LocalDateTime
 import javax.persistence.Entity
@@ -16,6 +15,5 @@ data class Post(
         val postTitle: String,
         val postContent: String,
         val amount: BigDecimal,
-        @CreationTimestamp
         val createdAt: LocalDateTime
 )

@@ -43,6 +43,10 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	enabled=true
+}
+
 dependencies {
 	asciidoctor 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 
