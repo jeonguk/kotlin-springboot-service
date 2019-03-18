@@ -1,11 +1,20 @@
 package com.jeonguk.web.model
 
+import org.apache.commons.lang.StringUtils
 import java.time.LocalDateTime
+import javax.validation.constraints.NotBlank
 
-data class PostDto(
-        val id: Long,
-        val postTitle: String,
-        val postContent: String,
-        val amount: String,
-        val createdAt: LocalDateTime
+data class RequestPost(
+    @get:NotBlank
+    var postTitle: String,
+    @get:NotBlank
+    var postContent: String,
+    var amount: String = "0",
+    var createdAt: LocalDateTime = LocalDateTime.now()
+)
+
+data class RequestPostDto(
+    @get:NotBlank
+    var postTitle: String = StringUtils.EMPTY,
+    var postContent: String = "default"
 )

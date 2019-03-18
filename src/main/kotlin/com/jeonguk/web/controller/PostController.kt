@@ -1,25 +1,35 @@
 package com.jeonguk.web.controller
 
 import com.jeonguk.web.entity.Post
-import com.jeonguk.web.model.PostDto
+import com.jeonguk.web.model.RequestPost
+import com.jeonguk.web.model.RequestPostDto
 import com.jeonguk.web.service.PostService
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import javax.validation.Valid
 
 @RestController
 @RequestMapping("/api")
 class PostController {
 
+    private val logger = LoggerFactory.getLogger(PostController::class.java)
+
     @Autowired
     lateinit var postService: PostService
 
     @GetMapping("/post/{postId}")
-    fun getPost(@PathVariable("postId") postId: Long): ResponseEntity<PostDto> = postService.getPost(postId)
+    fun getPost(@PathVariable("postId") postId: Long): ResponseEntity<RequestPost> = postService.getPost(postId)
 
     @GetMapping("/posts")
     fun getPosts(): ResponseEntity<MutableList<Post>> = postService.getPosts()
+
+    @PostMapping("posts")
+    fun savePosts(@Valid @RequestBody request: RequestPostDto): RequestPostDto {
+        logger.info("post title $request.postTitle")
+        logger.info("post content $request.postContent")
+        return request
+    }
+
 }
