@@ -16,7 +16,7 @@ class TransactionController {
     @Autowired
     lateinit var repository: TransactionRepository
 
-    @PostMapping
+    @PostMapping("/transactions")
     fun add(@RequestBody transaction: Transaction): Transaction {
         return repository.save(transaction)
     }
