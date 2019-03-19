@@ -22,7 +22,25 @@ spring:
       settings:
         trace: false
         web-allow-others: false
-
+  ###
+  #   Redis Settings
+  ###
+  redis:
+    host: localhost
+    # 연결 시간 초과 (밀리 초)
+    timeout: 10000
+    #Redis는 기본적으로 16 개의 샤드가 있습니다. 여기에서 특정 샤드를 구성합니다. 기본값은 0입니다.
+    database: 0
+    #연결 풀 최대 연결 수 (제한 없음을 나타내는 음수 값 사용) 기본값 8
+    lettuce:
+      pool:
+        max-active: 8
+        #연결 풀 최대 차단 대기 시간 (제한 없음을 나타내는 음수 값 사용) 기본값 -1
+        max-wait: -1
+        # 연결 풀의 최대 유휴 연결 수 기본값 8
+        max-idle: 8
+        #연결 풀의 최소 유휴 연결 수 기본값 0
+        min-idle: 0
 
 ###
 #   Hibernate Settings

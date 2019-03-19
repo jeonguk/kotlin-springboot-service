@@ -1,6 +1,6 @@
 package com.jeonguk.web
 
-import com.jeonguk.web.model.User
+import com.jeonguk.web.domain.User
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.extension.ExtendWith

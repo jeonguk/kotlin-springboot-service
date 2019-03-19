@@ -1,7 +1,7 @@
 package com.jeonguk.web
 
 import com.jeonguk.web.entity.Post
-import com.jeonguk.web.model.User
+import com.jeonguk.web.domain.User
 import com.jeonguk.web.repository.PostRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments

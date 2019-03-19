@@ -1,4 +1,4 @@
-package com.jeonguk.web.model
+package com.jeonguk.web.domain
 
 import org.apache.commons.lang.StringUtils
 import java.time.LocalDateTime

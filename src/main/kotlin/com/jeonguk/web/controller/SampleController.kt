@@ -1,6 +1,6 @@
 package com.jeonguk.web.controller
 
-import com.jeonguk.web.model.User
+import com.jeonguk.web.domain.User
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
