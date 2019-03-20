@@ -34,7 +34,7 @@ class H2DbConfig {
     fun entityManager(): LocalContainerEntityManagerFactoryBean {
         val em = LocalContainerEntityManagerFactoryBean()
         em.dataSource = dataSource()
-        em.setPackagesToScan("com.jeonguk.web.entity")
+        em.setPackagesToScan("com.jeonguk.web.entity.h2")
         em.jpaVendorAdapter = HibernateJpaVendorAdapter()
         em.setJpaPropertyMap(ImmutableMap.of(
                 "hibernate.hbm2ddl.auto", "create-drop",

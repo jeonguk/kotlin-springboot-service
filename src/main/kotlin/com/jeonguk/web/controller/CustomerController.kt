@@ -1,10 +1,10 @@
 package com.jeonguk.web.controller
 
-import com.jeonguk.web.repository.redis.CustomerRepository
+import com.jeonguk.web.repository.CustomerRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import com.jeonguk.web.domain.h2.Customer
+import com.jeonguk.web.entity.redis.Customer
 import com.jeonguk.web.exception.ResourceNotFoundException
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.GetMapping

@@ -1,6 +1,6 @@
-package com.jeonguk.web.repository.redis
+package com.jeonguk.web.repository
 
-import com.jeonguk.web.domain.h2.Transaction
+import com.jeonguk.web.entity.redis.Transaction
 import org.springframework.data.repository.CrudRepository
 
 interface TransactionRepository: CrudRepository<Transaction, Long> {

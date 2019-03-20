@@ -1,7 +1,6 @@
 package com.jeonguk.web.repository
 
-import com.jeonguk.web.domain.h2.Transaction
-import com.jeonguk.web.repository.redis.TransactionRepository
+import com.jeonguk.web.entity.redis.Transaction
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test

@@ -1,4 +1,4 @@
-package com.jeonguk.web.domain
+package com.jeonguk.web.domain.h2
 
 data class Response(
         val firstName: String?,

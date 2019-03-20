@@ -1,7 +1,7 @@
 package com.jeonguk.web
 
-import com.jeonguk.web.entity.Post
-import com.jeonguk.web.domain.User
+import com.jeonguk.web.entity.h2.Post
+import com.jeonguk.web.domain.h2.User
 import com.jeonguk.web.repository.PostRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
@@ -27,9 +27,9 @@ class Application {
 
 	companion object {
 		val initialUsers = arrayOf(
-				User(1, "jeonguk"),
-				User(2, "222222"),
-				User(3, "3333333")
+                User(1, "jeonguk"),
+                User(2, "222222"),
+                User(3, "3333333")
 		)
 	}
 

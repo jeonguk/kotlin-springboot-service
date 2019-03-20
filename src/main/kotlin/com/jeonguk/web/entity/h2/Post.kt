@@ -1,4 +1,4 @@
-package com.jeonguk.web.entity
+package com.jeonguk.web.entity.h2
 
 import java.math.BigDecimal
 import java.time.LocalDateTime

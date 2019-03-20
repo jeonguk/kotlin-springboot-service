@@ -1,8 +1,8 @@
 package com.jeonguk.web.controller
 
-import com.jeonguk.web.domain.h2.Transaction
+import com.jeonguk.web.entity.redis.Transaction
 import com.jeonguk.web.exception.ResourceNotFoundException
-import com.jeonguk.web.repository.redis.TransactionRepository
+import com.jeonguk.web.repository.TransactionRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

@@ -1,6 +1,6 @@
-package com.jeonguk.web.repository.redis
+package com.jeonguk.web.repository
 
-import com.jeonguk.web.domain.h2.Customer
+import com.jeonguk.web.entity.redis.Customer
 import org.springframework.data.repository.CrudRepository
 
 interface CustomerRepository: CrudRepository<Customer, Long> {

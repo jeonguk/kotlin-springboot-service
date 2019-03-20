@@ -3,7 +3,7 @@ package com.jeonguk.web.util
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.jeonguk.web.domain.Response
+import com.jeonguk.web.domain.h2.Response
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

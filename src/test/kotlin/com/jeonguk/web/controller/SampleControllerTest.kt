@@ -1,7 +1,7 @@
 package com.jeonguk.web.controller
 
 import com.google.gson.Gson
-import com.jeonguk.web.domain.User
+import com.jeonguk.web.domain.h2.User
 import com.jeonguk.web.util.ApiDocumentUtils.Companion.documentRequest
 import com.jeonguk.web.util.ApiDocumentUtils.Companion.documentResponse
 import org.junit.jupiter.api.BeforeEach

@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.test.context.junit.jupiter.SpringExtension
-import com.jeonguk.web.domain.h2.Customer
-import com.jeonguk.web.domain.h2.Account
+import com.jeonguk.web.entity.redis.Customer
+import com.jeonguk.web.entity.redis.Account
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test

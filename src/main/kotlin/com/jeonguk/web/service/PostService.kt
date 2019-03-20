@@ -1,7 +1,7 @@
 package com.jeonguk.web.service
 
-import com.jeonguk.web.entity.Post
-import com.jeonguk.web.domain.RequestPost
+import com.jeonguk.web.entity.h2.Post
+import com.jeonguk.web.domain.h2.RequestPost
 import com.jeonguk.web.repository.PostRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
