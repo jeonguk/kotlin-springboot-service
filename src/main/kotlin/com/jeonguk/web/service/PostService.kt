@@ -5,6 +5,8 @@ import com.jeonguk.web.domain.h2.RequestPost
 import com.jeonguk.web.repository.PostRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import java.lang.String.valueOf
@@ -35,6 +37,10 @@ class PostService {
         logger.info("CHECK {}", check)
 
         return ResponseEntity.ok().body(postList)
+    }
+
+    fun getPostsWithPage(pageable: Pageable): Page<Post> {
+        return postRepository.findAll(pageable)
     }
 
 }

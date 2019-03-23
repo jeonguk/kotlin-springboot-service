@@ -12,6 +12,7 @@ buildscript {
 		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
 		classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
 		classpath("org.asciidoctor:asciidoctor-gradle-plugin:1.5.3")
+		classpath("net.ltgt.gradle:gradle-apt-plugin:0.9")
 	}
 }
 
@@ -59,17 +60,16 @@ dependencies {
 	implementation 'org.jetbrains.kotlin:kotlin-reflect'
 	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 
-	implementation 'com.google.code.gson:gson'
-
 	implementation 'mysql:mysql-connector-java:5.1.45'
 	implementation 'org.apache.commons:commons-pool2:2.6.1'
-
 	implementation 'com.zaxxer:HikariCP:3.3.1'
 	implementation 'com.dangdang:sharding-jdbc-core:1.5.4.1'
-	implementation 'commons-lang:commons-lang:2.6'
-
 	implementation 'com.h2database:h2:1.4.191'
 
+	implementation 'commons-lang:commons-lang:2.6'
+	implementation 'com.google.code.gson:gson'
+	implementation 'org.projectlombok:lombok:1.16.18'
+	
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude module: 'junit'
 		exclude group: 'org.hamcrest'
