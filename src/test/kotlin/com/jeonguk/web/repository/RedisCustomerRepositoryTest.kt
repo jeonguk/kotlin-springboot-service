@@ -2,6 +2,7 @@ package com.jeonguk.web.repository
 
 import com.jeonguk.web.entity.redis.Account
 import com.jeonguk.web.entity.redis.Customer
+import com.jeonguk.web.repository.redis.CustomerRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test

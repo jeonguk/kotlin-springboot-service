@@ -1,4 +1,4 @@
-package com.jeonguk.web.repository
+package com.jeonguk.web.repository.h2
 
 import com.jeonguk.web.entity.h2.Post
 import org.springframework.data.jpa.repository.JpaRepository

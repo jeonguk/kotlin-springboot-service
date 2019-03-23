@@ -2,7 +2,7 @@ package com.jeonguk.web
 
 import com.jeonguk.web.entity.h2.Post
 import com.jeonguk.web.domain.h2.User
-import com.jeonguk.web.repository.PostRepository
+import com.jeonguk.web.repository.h2.PostRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner

@@ -14,7 +14,7 @@ import javax.sql.DataSource
 
 @Configuration
 @EnableJpaRepositories(
-        basePackages = ["com.jeonguk.web.repository"],
+        basePackages = ["com.jeonguk.web.repository.h2"],
         entityManagerFactoryRef = "entityManager",
         transactionManagerRef = "transactionManager"
 )
