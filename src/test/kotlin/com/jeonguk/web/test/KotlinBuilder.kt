@@ -27,10 +27,10 @@ class KotlinBuilder(
 // Usages
 fun main() {
 
-    val builterTest = KotlinBuilder.Builder()
+    val builderTest = KotlinBuilder.Builder()
             .userId("write user id")
             .userName("jeonguk")
             .build()
-    println(builterTest)
+    println(builderTest)
 
 }
