@@ -16,7 +16,6 @@ class PostController {
 
     private val logger = LoggerFactory.getLogger(PostController::class.java)
 
-
     @Autowired
     lateinit var postService: PostService
 
